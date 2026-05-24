@@ -50784,6 +50784,21 @@
               matchTime: 15000,
               matches: '[text~="\\\\d+\\\\s*[秒sS][!\\\\.。,\\\\,，]?$"][clickable=true][visibleToUser=true][width<400&&height<300]',
             },
+            {
+              matches: '@ImageView[clickable=true][childCount=0][width<100&&height<100] +(1,2) [text*="摇动" || text*="摇一摇" || text*="扭动" || text*="晃动" || text*="点击"][visibleToUser=true]',
+            },
+            {
+              matches: '@ImageView[clickable=true][childCount=0][width<100&&height<100] -(1,2) [text*="摇动" || text*="摇一摇" || text*="扭动"][visibleToUser=true]',
+            },
+            {
+              matches: '@ImageView[clickable=true][childCount=0] < FrameLayout + FrameLayout > [text*="摇动" || text*="摇一摇" || text*="扭动"][visibleToUser=true]',
+            },
+            {
+              matches: '@View[clickable=true][childCount=0][width<100&&height<100] < FrameLayout < FrameLayout + FrameLayout > [text*="摇动" || text*="摇一摇" || text*="扭动"][visibleToUser=true]',
+            },
+            {
+              matches: '[text*="摇动" || text*="摇一摇" || text*="扭动手机" || text*="晃动手机"][childCount=0][visibleToUser=true] <<n @ImageView[clickable=true][childCount=0][width<100&&height<100][visibleToUser=true]',
+            },
           ],
           actionMaximum: 2,
         },
